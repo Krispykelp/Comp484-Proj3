@@ -70,12 +70,13 @@ toggleButton.addEventListener("click", toggleStatus);
 
 /* ======================================= */
 // --- Task 10: Timed Animation ---
+// Now flashes the blue status box (status-output)
 function startFlashing() {
   // Avoid creating multiple intervals
   if (flashingIntervalId !== null) return;
 
   flashingIntervalId = setInterval(() => {
-    controlPanel.classList.toggle("hidden");
+    statusOutput.classList.toggle("hidden");
   }, 500);
 }
 
@@ -84,8 +85,8 @@ function stopFlashing() {
     clearInterval(flashingIntervalId);
     flashingIntervalId = null;
 
-    // Make sure control panel is visible after stopping (optional but nice)
-    controlPanel.classList.remove("hidden");
+    // Make sure the status box is visible after stopping
+    statusOutput.classList.remove("hidden");
   }
 }
 
